@@ -7,7 +7,7 @@
 
 # alias ls='ls --color=auto'
 # alias grep='grep --color=auto'
-alias rar='~/scripts/su.sh'
+alias ear='~/scripts/su.sh'
 # PS1='[\u@\h \W]\$ '
 PS1="
 \[\e[1;31m\][\A]\[\e[m\]
