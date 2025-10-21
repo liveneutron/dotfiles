@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/Neutron'
+let g:netrw_dirhist_0='/home/Neutron/.vim'
+let g:netrw_dirhist_9='/home/Neutron'
+let g:netrw_dirhist_8='/home/Neutron/.vim'
+let g:netrw_dirhist_7='/home/Neutron'
+let g:netrw_dirhist_6='/home/Neutron/.config/river'
+let g:netrw_dirhist_5='/home/Neutron'
+let g:netrw_dirhist_4='/home/Neutron/.config'
+let g:netrw_dirhist_3='/home/Neutron'
+let g:netrw_dirhist_2='/home/Manjeet'
