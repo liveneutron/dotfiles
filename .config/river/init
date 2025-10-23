@@ -13,12 +13,12 @@ riverctl spawn "eww open info"
 riverctl spawn "eww open power_menu"
 # My shortcuts
 riverctl map normal Super Return spawn foot
-riverctl map -release normal None Menu spawn "~/scripts/toggle_bemenu.sh"
 riverctl map normal Super E spawn "foot ranger"
 riverctl map normal Super A spawn "foot ani-cli"
 riverctl map normal Super Y spawn "foot ~/yt/yt.sh"
 riverctl map normal Super V spawn "foot vim"
 riverctl map normal Super W spawn firefox
+riverctl map normal Super z spawn zathura
 riverctl map -release normal Super P spawn 'grim ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
 riverctl map -release normal Super+Shift P spawn 'grim -g "$(slurp -w 0)" ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
 
