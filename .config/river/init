@@ -16,8 +16,8 @@ riverctl map normal Super Return spawn foot
 riverctl map normal Super E spawn "foot ranger"
 riverctl map normal Super A spawn "foot ani-cli"
 riverctl map normal Super Y spawn "foot ~/yt/yt.sh"
-riverctl map normal Super V spawn "foot vim"
-riverctl map normal Super N spawn "foot nmtui"
+riverctl map normal Super N spawn "foot nvim"
+riverctl map normal Super I spawn "foot nmtui"
 riverctl map normal Super W spawn firefox
 riverctl map normal Super Z spawn zathura
 riverctl map -release normal Super P spawn 'grim ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
