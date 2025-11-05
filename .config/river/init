@@ -1,27 +1,32 @@
 #!/bin/sh
 
-#configurations
-#riverctl focus-follows-cursor normal
-
-# See the river(1), riverctl(1), and rivertile(1) man pages for complete
-# documentation.
-# Auto start
-riverctl spawn "swaybg -i ~/walls/boy.png -m fill"
+##################
+##              ##
+##  Auto Start  ##
+##              ##
+##################
+riverctl spawn "swww-daemon"
+riverctl spawn "swww img ~/walls/ign-0008.png"
 riverctl spawn "brightnessctl set 15%"
 riverctl spawn "eww daemon"
 riverctl spawn "eww open info"
 riverctl spawn "eww open power_menu"
-# My shortcuts
+
+####################
+##                ##
+##  My shortcuts  ##
+##                ##
+####################
 riverctl map normal Super Return spawn foot
 riverctl map normal Super E spawn "foot ranger"
 riverctl map normal Super A spawn "foot ani-cli"
-riverctl map normal Super Y spawn "foot ~/yt/yt.sh"
 riverctl map normal Super N spawn "foot nvim"
 riverctl map normal Super I spawn "foot nmtui"
-riverctl map normal Super W spawn firefox
+riverctl map normal Super W spawn librewolf
 riverctl map normal Super Z spawn zathura
 riverctl map -release normal Super P spawn 'grim ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
 riverctl map -release normal Super+Shift P spawn 'grim -g "$(slurp -w 0)" ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
+riverctl map normal Shift space spawn '~/scripts/toggle_eww_menu.sh'
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
@@ -134,10 +139,9 @@ do
     # Eject the optical drive (well if you still have one that is)
     riverctl map $mode None XF86Eject spawn 'eject -T'
 
-    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map normal Super Right spawn 'pamixer --allow-boost -i 5'
-    riverctl map normal Super Left spawn 'pamixer --allow-boost -d 5'
-    riverctl map normal Super M spawn 'pamixer --toggle-mute'
+    # Control pulse audio volume with pulsemixer
+    riverctl map normal Super Right spawn 'pulsemixer --change-volume +5'
+    riverctl map normal Super Left spawn 'pulsemixer --change-volume -5'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
@@ -145,13 +149,17 @@ do
     riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
     riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
 
-    # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
+    # Control screen backlight brightness with brightnessctl 
     riverctl map normal Super Up   spawn 'brightnessctl set +5%'
     riverctl map normal Super Down spawn 'brightnessctl set 5%-'
 done
 
-# Set background and border color
-riverctl background-color 0x002b36
+##############
+##          ##
+##  BORDER  ##
+##          ##
+##############
+riverctl set border-width 0px
 riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
 
@@ -161,10 +169,14 @@ riverctl set-repeat 50 300
 # Make all views with an app-id that starts with "float" and title "foo" start floating.
 riverctl rule-add -app-id 'float*' -title 'foo' float
 
-# Make all views with app-id "bar" and any title use client-side decorations
-#riverctl rule-add -app-id "bar" csd
+#csd
+#riverctl rule-add csd
 
-# Set the default layout generator to be rivertile and start it.
-# River will send the process group of the init executable SIGTERM on exit.
+
+##############
+##          ##
+##  LAYOUT  ##
+##          ##
+##############
 riverctl default-layout rivertile
 rivertile -view-padding 0 -outer-padding 0 &
