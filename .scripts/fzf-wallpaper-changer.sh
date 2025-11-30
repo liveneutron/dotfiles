@@ -1,4 +1,4 @@
-cd ~/walls/ && 
+cd ~/.walls/ && 
 fzf -m --preview 'chafa {} -s 58 -c full' \
     --bind 'enter:execute(
       swww img {} \

@@ -25,8 +25,8 @@ riverctl map normal Super W spawn librewolf
 riverctl map normal Super Z spawn zathura
 riverctl map -release normal Super P spawn 'grim ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
 riverctl map -release normal Super+Shift P spawn 'grim -g "$(slurp -w 0)" ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
-riverctl map normal Super+Shift W spawn 'foot ~/scripts/fzf-wallpaper-changer.sh'
-riverctl map normal Shift space spawn '~/scripts/toggle_eww_menu.sh'
+riverctl map normal Super+Shift W spawn 'foot ~/.scripts/fzf-preview.sh'
+riverctl map normal Shift space spawn '~/.scripts/toggle_eww_menu.sh'
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
