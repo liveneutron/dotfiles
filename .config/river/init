@@ -6,10 +6,16 @@
 ##              ##
 ##################
 riverctl spawn "swww-daemon"
+riverctl spawn "mpd .config/mpd/mpd.conf & mpd-mpris"
 riverctl spawn "brightnessctl set 15%"
 riverctl spawn "eww daemon"
 riverctl spawn "eww open info"
 riverctl spawn "eww open power_menu"
+riverctl spawn "eww open music_ctrl"
+riverctl spawn "cd ~/yt-local/ && source env/bin/activate && python server.py"
+riverctl spawn "~/hydroxide/hydroxide imap"
+riverctl spawn "~/hydroxide/hydroxide smtp"
+riverctl spawn "~/.scripts/random-wall.sh"
 
 ####################
 ##                ##
@@ -25,7 +31,7 @@ riverctl map normal Super W spawn librewolf
 riverctl map normal Super Z spawn zathura
 riverctl map -release normal Super P spawn 'grim ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
 riverctl map -release normal Super+Shift P spawn 'grim -g "$(slurp -w 0)" ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
-riverctl map normal Super+Shift W spawn 'foot ~/.scripts/fzf-preview.sh'
+riverctl map normal Super+Shift W spawn 'foot ~/.scripts/fzf-wallpaper-changer.sh'
 riverctl map normal Shift space spawn '~/.scripts/toggle_eww_menu.sh'
 
 # Super+Q to close the focused view
