@@ -29,11 +29,11 @@ riverctl map normal Super N spawn "foot nvim"
 riverctl map normal Super I spawn "foot nmtui"
 riverctl map normal Super W spawn librewolf
 riverctl map normal Super Z spawn zathura
+riverctl map normal Super+Shift Y spawn 'hyprlock'
 riverctl map -release normal Super P spawn 'grim ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
 riverctl map -release normal Super+Shift P spawn 'grim -g "$(slurp -w 0)" ~/pictures/screenshort/"$(date +%g-%m-%d-%T)".png'
 riverctl map normal Super+Shift W spawn 'foot ~/.scripts/fzf-wallpaper-changer.sh'
 riverctl map normal Shift space spawn '~/.scripts/toggle_bemenu.sh'
-riverctl map normal Super+Shift L spawn hyperlock
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
@@ -147,8 +147,8 @@ do
     riverctl map $mode None XF86Eject spawn 'eject -T'
 
     # Control pulse audio volume with pulsemixer
-    riverctl map normal Super Right spawn 'pulsemixer --change-volume +5'
-    riverctl map normal Super Left spawn 'pulsemixer --change-volume -5'
+    riverctl map normal Super Right spawn 'pulsemixer --change-volume +5 & ~/.scripts/volume.sh'
+    riverctl map normal Super Left spawn 'pulsemixer --change-volume -5 & ~/.scripts/volume.sh'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
@@ -157,8 +157,8 @@ do
     riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
 
     # Control screen backlight brightness with brightnessctl 
-    riverctl map normal Super Up   spawn 'brightnessctl set +5%'
-    riverctl map normal Super Down spawn 'brightnessctl set 5%-'
+    riverctl map normal Super Up   spawn 'brightnessctl set +5% & ~/.scripts/brightness.sh'
+    riverctl map normal Super Down spawn 'brightnessctl set 5%- & ~/.scripts/brightness.sh'
 done
 
 ##############
